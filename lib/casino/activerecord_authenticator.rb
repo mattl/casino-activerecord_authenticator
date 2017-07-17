@@ -1,6 +1,5 @@
 require 'active_record'
 require 'unix_crypt'
-gem 'bcrypt4'
 require 'bcrypt'
 require 'phpass'
 
