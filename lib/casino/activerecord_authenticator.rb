@@ -1,6 +1,7 @@
 require 'active_record'
 require 'unix_crypt'
-require 'bcrypt4'
+gem 'bcrypt4'
+require 'bcrypt'
 require 'phpass'
 
 class CASino::ActiveRecordAuthenticator
