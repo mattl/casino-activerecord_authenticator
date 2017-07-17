@@ -1,6 +1,6 @@
 require 'active_record'
 require 'unix_crypt'
-require 'bcrypt'
+require 'bcrypt4'
 require 'phpass'
 
 class CASino::ActiveRecordAuthenticator
@@ -67,7 +67,7 @@ class CASino::ActiveRecordAuthenticator
     return false if password_from_database.blank?
     magic = password_from_database.split('$')[1]
     case magic
-    when /\A2a?\z/
+    when /\A2y?\z/
       valid_password_with_bcrypt?(password, password_from_database)
     when /\AH\z/, /\AP\z/
       valid_password_with_phpass?(password, password_from_database)
